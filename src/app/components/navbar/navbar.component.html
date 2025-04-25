@@ -1,0 +1,18 @@
+<nav>
+<button mat-button>Nosotros</button>
+
+
+<button mat-button [matMenuTriggerFor]="belowMenu">Adopta</button>
+<mat-menu #belowMenu="matMenu" yPosition="below">
+  <button mat-menu-item>Perros</button>
+  <button mat-menu-item>Gatos</button>
+</mat-menu>
+
+<button mat-button [matMenuTriggerFor]="beforeMenu">Voluntariado</button>
+<mat-menu #beforeMenu="matMenu" xPosition="before">
+    <button mat-menu-item>Donación</button>
+</mat-menu>
+
+<button mat-button>Contacto</button>
+
+</nav>

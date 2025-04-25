@@ -1,0 +1,14 @@
+nav {
+    display: flex;
+    justify-content: center; /* centra horizontalmente los botones */
+    gap: 15px; /* espacio entre botones */
+    padding: 20px;
+    background-color: white;
+  }
+
+  nav button {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
