@@ -1,18 +1,14 @@
-<nav>
-<button mat-button>Nosotros</button>
-
-
-<button mat-button [matMenuTriggerFor]="belowMenu">Adopta</button>
-<mat-menu #belowMenu="matMenu" yPosition="below">
-  <button mat-menu-item>Perros</button>
-  <button mat-menu-item>Gatos</button>
-</mat-menu>
-
-<button mat-button [matMenuTriggerFor]="beforeMenu">Voluntariado</button>
-<mat-menu #beforeMenu="matMenu" xPosition="before">
-    <button mat-menu-item>Donación</button>
-</mat-menu>
-
-<button mat-button>Contacto</button>
-
+<nav class="navbar" style="background-color: #e3f2fd;" data-bs-theme="light">
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Dog</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Perros</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Contacto</a>
+  </li>
+  
+</ul>
 </nav>
