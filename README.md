@@ -20,3 +20,6 @@ ng generate component
 "scripts": [
   "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
 ],
+
+Descripción:
+EL Navbar.ts debe tener importado el RouterModule para que desde el menu de manevacion puedas dirigite el componente contacto
