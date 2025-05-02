@@ -22,4 +22,6 @@ ng generate component
 ],
 
 Descripción:
+las etiquetas que se visualizan en pantalla deben ser importadas desde app.components.ts para que se puedan visualizar.
+
 EL Navbar.ts debe tener importado el RouterModule para que desde el menu de manevacion puedas dirigite el componente contacto
