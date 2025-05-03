@@ -1,26 +1,30 @@
 <div class="content">
-<div class="card" style="width: 15rem;">
-  <img src="https://img.freepik.com/foto-gratis/adorable-perro-basenji-marron-blanco-sonriendo-dando-maximo-cinco-aislado-blanco_346278-1657.jpg" class="card-img-top" alt="perro">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+  <div class="card" *ngFor="let perro of perros" style="width: 15rem;">
+    <img [src]="perro.imagen" class="card-img-top" [alt]="perro.nombre">
+    <div class="card-body">
+      <h5 class="card-title">{{ perro.nombre }}</h5>
+      <p class="card-text">{{ perro.descripcion }}</p>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#infoModal" (click)="abrirModal(perro)">
+        Ver más
+      </button>
+    </div>
   </div>
 </div>
-<div class="card" style="width: 15rem;">
-  <img src="https://img.freepik.com/foto-gratis/adorable-perro-basenji-marron-blanco-sonriendo-dando-maximo-cinco-aislado-blanco_346278-1657.jpg" class="card-img-top" alt="perro">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+
+<!-- Modal -->
+<div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" *ngIf="seleccionado">
+      <div class="modal-header">
+        <h5 class="modal-title" id="infoModalLabel">{{ seleccionado.nombre }}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        {{ seleccionado.detalles }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
   </div>
-</div>
-<div class="card" style="width: 15rem;">
-  <img src="https://img.freepik.com/foto-gratis/adorable-perro-basenji-marron-blanco-sonriendo-dando-maximo-cinco-aislado-blanco_346278-1657.jpg" class="card-img-top" alt="perro">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
 </div>
