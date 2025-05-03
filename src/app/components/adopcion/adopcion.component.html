@@ -1,0 +1,40 @@
+<div class="container mt-4">
+    <h2 class="mb-3">Agregar Perro en Adopción 🐶</h2>
+  
+    <form (ngSubmit)="enviarFormulario()" #form="ngForm">
+      <div class="mb-3">
+        <label class="form-label">Nombre</label>
+        <input type="text" class="form-control" [(ngModel)]="nombre" name="nombre" required />
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Raza</label>
+        <input type="text" class="form-control" [(ngModel)]="raza" name="raza" required />
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Edad (en años)</label>
+        <input type="number" class="form-control" [(ngModel)]="edad" name="edad" required min="0" />
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Descripción</label>
+        <textarea class="form-control" rows="3" [(ngModel)]="descripcion" name="descripcion" required></textarea>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Publicar 🐾</button>
+    </form>
+  
+    <!-- Vista previa -->
+    <div class="card mt-5" *ngIf="nombre || raza || edad || descripcion">
+      <div class="card-body">
+        <h5 class="card-title">{{ nombre || 'Sin nombre' }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ raza || 'Sin raza definida' }}</h6>
+        <p class="card-text">
+          Edad: {{ edad || 'No especificada' }} años<br />
+          {{ descripcion || 'Sin descripción' }}
+        </p>
+      </div>
+    </div>
+  </div>
+  

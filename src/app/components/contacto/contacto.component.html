@@ -1,11 +1,11 @@
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-6">
-      <form>
+      <form (ngSubmit)="enviarFormulario()" #form="ngForm">
 
         <div class="mb-3">
           <label for="validationServer01" class="form-label">First name</label>
-          <input type="text" class="form-control" id="validationServer01" value="Mark" required>
+          <input type="text" class="form-control" id="validationServer01" name="nombre" [(ngModel)]="nombre" required>
 
         </div>
         <div class="mb-3">
@@ -24,15 +24,19 @@
 
         <div class="mb-3">
           <label for="validationTextarea" class="form-label">Textarea</label>
-          <textarea class="form-control" id="validationTextarea" placeholder="Required example textarea"
-            required></textarea>
+          <textarea class="form-control" id="validationTextarea" name="mensaje" [(ngModel)]="mensaje" required></textarea>
           <div class="invalid-feedback">
             Please enter a message in the textarea.
           </div>
         </div>
         
-        <button type="submit" class="btn btn-primary w-100">Submit</button>
+        <button type="submit" [disabled]="!form.valid" class="btn btn-primary w-100">Submit</button>
       </form>
+
+      <div *ngIf="nombre || mensaje">
+        <p><strong>Nombre:</strong> {{ nombre }}</p>
+        <p><strong>Mensaje:</strong> {{ mensaje }}</p>
+      </div>
     </div>
   </div>
 </div>

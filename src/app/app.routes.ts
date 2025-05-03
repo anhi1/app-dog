@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 import { CardComponent } from './components/card/card.component';
-import { ContactoComponent } from './components/contacto/contacto.component';
+import{AdopcionComponent} from './components/adopcion/adopcion.component';
 
 export const routes: Routes = [
     { path: '', component: CardComponent },
-    { path: 'contacto', component: ContactoComponent}
+    { path: 'adopcion', component: AdopcionComponent}
 ];
